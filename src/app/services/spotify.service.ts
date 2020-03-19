@@ -20,4 +20,12 @@ export class SpotifyService {
 
     return this.http.get('https://api.spotify.com/v1/browse/new-releases?limit=20', { headers });
   }
+
+  getArtista(termino: string) {
+    const headers = new HttpHeaders({
+      'Authorization': 'Bearer BQAj3cisft4SPznoTXJVThDkTsjhyg6bj0poV-TZXeNr8_6qjfy75waBka8i811QLmHVziAsItGI7am1O0A'
+    });
+
+    return this.http.get(`https://api.spotify.com/v1/search?q=${ termino }&type=artist&limit=15`, { headers });
+  }
 }
